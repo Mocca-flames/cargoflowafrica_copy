@@ -1,0 +1,837 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" type="image/avif" href="./logo-desktop.avif" sizes="any">
+  <link rel="icon" href="./favicon-16x16.png" sizes="16x16" type="image/png">
+  <link rel="icon" href="./android-chrome-192x192.png" sizes="192x192" type="image/png">
+  <link rel="icon" href="./android-chrome-512x512.png" sizes="512x512" type="image/png">
+  <link rel="apple-touch-icon" href="./android-chrome-512x512.png" sizes="512x512">
+  <meta name="theme-color" content="#0f172a">
+  <meta property="og:image" content="./logo-desktop.avif">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta name="twitter:image" content="./logo-desktop.avif">
+  <title>Cargo Flow Africa Transport Group</title>
+  <link rel="stylesheet" href="./style.css" />
+</head>
+<body>
+  <div id="root">
+    <!-- Header -->
+    <header class="fixed top-0 inset-x-0 z-50 backdrop-blur-xl bg-background/70 border-b border-border/50">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10 h-16 flex items-center justify-between">
+        <a class="flex items-center" href="/">
+          <picture>
+            <source media="(max-width: 768px)" srcset="./logo-mobile.avif" type="image/avif">
+            <img src="./logo-desktop.avif" alt="Cargo Flow Africa" class="h-10 object-contain" />
+          </picture>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav id="main-nav" class="hidden md:flex items-center gap-8">
+          <a href="#about" class="nav-link text-sm text-muted-foreground hover:text-foreground transition-colors">About Us</a>
+          <a href="#services" class="nav-link text-sm text-muted-foreground hover:text-foreground transition-colors">Our Services</a>
+          <a href="#industries" class="nav-link text-sm text-muted-foreground hover:text-foreground transition-colors">Industries We Serve</a>
+          <a href="#process" class="nav-link text-sm text-muted-foreground hover:text-foreground transition-colors">Our Process</a>
+          <a href="#contact" class="nav-link text-sm text-muted-foreground hover:text-foreground transition-colors">Contact Us</a>
+          <a href="./profile.pdf" download class="nav-link text-sm text-muted-foreground hover:text-accent transition-colors flex items-center gap-1.5">
+            Company Profile
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-down w-4 h-4"><path d="M14 2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-8l-8-8z"></path><path d="M14 2v8h8"></path><path d="M12 19v-8a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v8"></path><path d="M10 17l2 2 2-2"></path></svg>
+          </a>
+        </nav>
+
+        <!-- Mobile menu button & CTA -->
+        <div class="flex items-center gap-3">
+          <a href="#contact" class="hidden md:inline-flex btn btn-cta btn-lg group items-center">
+            Get Quote
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right w-4 h-4 ml-2 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
+              <path d="M7 7h10v10"></path>
+              <path d="M7 17 17 7"></path>
+            </svg>
+          </a>
+          <button id="mobile-menu-btn" class="md:hidden btn btn-ghost btn-icon" aria-label="Toggle menu" aria-expanded="false">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu w-5 h-5">
+              <line x1="4" x2="20" y1="12" y2="12"></line>
+              <line x1="4" x2="20" y1="6" y2="6"></line>
+              <line x1="4" x2="20" y1="18" y2="18"></line>
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation (hidden by default) -->
+      <nav id="mobile-nav" class="md:hidden hidden">
+        <div class="px-6 lg:px-10 py-4 flex flex-col gap-3">
+          <a href="#about" class="nav-link-mobile text-sm text-muted-foreground hover:text-foreground transition-colors py-2">About Us</a>
+          <a href="#services" class="nav-link-mobile text-sm text-muted-foreground hover:text-foreground transition-colors py-2">Our Services</a>
+          <a href="#industries" class="nav-link-mobile text-sm text-muted-foreground hover:text-foreground transition-colors py-2">Industries</a>
+          <a href="#process" class="nav-link-mobile text-sm text-muted-foreground hover:text-foreground transition-colors py-2">Our Process</a>
+          <a href="#contact" class="nav-link-mobile text-sm text-muted-foreground hover:text-foreground transition-colors py-2">Contact Us</a>
+          <a href="./profile.pdf" download class="nav-link-mobile text-sm text-muted-foreground hover:text-accent transition-colors py-2 flex items-center gap-1.5">
+            Company Profile
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-down w-4 h-4"><path d="M14 2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-8l-8-8z"></path><path d="M14 2v8h8"></path><path d="M12 19v-8a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v8"></path><path d="M10 17l2 2 2-2"></path></svg>
+          </a>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="relative pt-28 pb-20 lg:pt-40 lg:pb-32 overflow-hidden">
+        <div class="absolute -top-40 right-0 w-[600px] h-[600px] rounded-full bg-accent/20 blur-3xl"></div>
+        <div class="absolute top-40 -left-40 w-[500px] h-[500px] rounded-full bg-chart-2/10 blur-3xl"></div>
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-12 gap-12 items-center">
+          <!-- Hero Text -->
+          <div class="lg:col-span-7">
+            <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-secondary border border-border text-xs text-muted-foreground mb-8">
+              <span class="w-1.5 h-1.5 rounded-full bg-accent animate-pulse"></span>
+              Connecting 12 African nations across the SADC region
+            </div>
+            <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-medium tracking-tight leading-[1.02] text-balance">
+              Connecting Cargo. <br /> Moving <span class="italic text-accent">Africa.</span>
+            </h1>
+            <p class="mt-8 text-lg text-muted-foreground max-w-xl leading-relaxed">
+              Cargo Flow Africa Transport Group is an African transport brokerage and logistics coordination company. We connect businesses, commodity traders, and manufacturers with verified transport operators capable of meeting their specific cargo requirements.
+            </p>
+
+            <!-- Hero CTA Buttons -->
+            <div class="mt-10 flex flex-wrap items-center gap-4">
+              <a href="#contact" class="btn btn-primary btn-lg group inline-flex items-center justify-center">
+                Get a Transport Quote
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right w-4 h-4 ml-1 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
+                  <path d="M7 7h10v10"></path>
+                  <path d="M7 17 17 7"></path>
+                </svg>
+              </a>
+              <a href="#services" class="btn btn-secondary btn-lg inline-flex items-center justify-center">
+                View Our Services
+              </a>
+            </div>
+
+            <!-- Stats -->
+            <div class="mt-14 grid grid-cols-3 gap-8 max-w-lg">
+              <div>
+                <div class="font-serif text-3xl font-medium">12</div>
+                <div class="text-xs text-muted-foreground mt-1 uppercase tracking-wider">Countries</div>
+              </div>
+              <div>
+                <div class="font-serif text-3xl font-medium">Network</div>
+                <div class="text-xs text-muted-foreground mt-1 uppercase tracking-wider">Driven Model</div>
+              </div>
+              <div>
+                <div class="font-serif text-3xl font-medium">100%</div>
+                <div class="text-xs text-muted-foreground mt-1 uppercase tracking-wider">Cargo Focus</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Hero Image -->
+          <div class="lg:col-span-5 relative">
+            <div class="relative aspect-[4/5] rounded-3xl overflow-hidden bg-primary grain">
+              <img src="./hero_landing.avif" alt="Truck on African highway at sunset" class="w-full h-full object-cover opacity-80" />
+              <div class="absolute inset-0 bg-gradient-to-t from-primary via-primary/30 to-transparent"></div>
+              <div class="absolute bottom-6 left-6 right-6 p-5 rounded-2xl bg-card/95 backdrop-blur-xl border border-border shadow-2xl">
+                <div class="flex items-center justify-between mb-3">
+                  <div class="flex items-center gap-2">
+                    <span class="w-2 h-2 rounded-full bg-accent"></span>
+                    <span class="text-xs font-medium tracking-wide uppercase">Cross-Border Transport</span>
+                  </div>
+                  <span class="text-xs text-muted-foreground">In Transit</span>
+                </div>
+                <div class="flex items-center gap-3 text-sm">
+                  <div class="flex items-center gap-1.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin w-3.5 h-3.5 text-accent">
+                      <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span class="font-medium">Gaborone</span>
+                  </div>
+                  <div class="flex-1 h-px bg-border relative">
+                    <div class="absolute left-0 top-0 h-full bg-accent" style="width: 50%;"></div>
+                    <div class="absolute -top-1 h-3 w-3 rounded-full bg-accent shadow-lg" style="left: 50%;"></div>
+                  </div>
+                  <div class="flex items-center gap-1.5">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin w-3.5 h-3.5 text-muted-foreground">
+                      <path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path>
+                      <circle cx="12" cy="10" r="3"></circle>
+                    </svg>
+                    <span class="font-medium">Johannesburg</span>
+                  </div>
+                </div>
+                <div class="mt-3 text-xs text-muted-foreground">Bulk Minerals • Sourced Capacity • Full Documentation</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About / Why Partner With Us Section -->
+      <section id="about" class="py-24 lg:py-32">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+          <div class="max-w-3xl mb-16">
+            <div class="text-xs tracking-[0.2em] uppercase text-accent font-medium mb-4">Why Partner With Us</div>
+            <h2 class="font-serif text-4xl md:text-5xl font-medium tracking-tight leading-tight">
+              More than a transport connection. <br /> <span class="text-muted-foreground">A logistics partner focused on making cargo movement simpler.</span>
+            </h2>
+            <p class="mt-6 text-lg text-muted-foreground leading-relaxed">
+              Our business operates through a network-driven model. Rather than depending on a single fleet, we source transportation capacity from a broader network of operators, allowing us to respond to different cargo volumes, vehicle requirements, and transport routes across the continent.
+            </p>
+            <div class="mt-8">
+              <a href="./profile.pdf" download class="inline-flex items-center gap-2 btn btn-outline btn-sm group">
+                Download Company Profile (PDF)
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-down w-4 h-4 group-hover:translate-y-0.5 transition-transform"><path d="M14 2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-8l-8-8z"></path><path d="M14 2v8h8"></path><path d="M12 19v-8a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v8"></path><path d="M10 17l2 2 2-2"></path></svg>
+              </a>
+            </div>
+          </div>
+          <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Greater Access -->
+            <div class="group">
+              <div class="mb-6 w-12 h-12 rounded-xl bg-secondary flex items-center justify-center group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck w-5 h-5">
+                  <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path>
+                  <path d="M15 18H9"></path>
+                  <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path>
+                  <circle cx="17" cy="18" r="2"></circle>
+                  <circle cx="7" cy="18" r="2"></circle>
+                </svg>
+              </div>
+              <h3 class="font-serif text-xl font-medium mb-2">Greater Access to Capacity</h3>
+              <p class="text-muted-foreground text-sm leading-relaxed">We source suitable transport operators through a broader network of fleet owners and commercial transport businesses.</p>
+            </div>
+            <!-- Flexibility -->
+            <div class="group">
+              <div class="mb-6 w-12 h-12 rounded-xl bg-secondary flex items-center justify-center group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shuffle w-5 h-5">
+                  <polyline points="16 3 21 3 21 8"></polyline>
+                  <line x1="4" x2="21" y1="20" y2="3"></line>
+                  <polyline points="21 16 21 21 16 21"></polyline>
+                  <line x1="15" x2="21" y1="15" y2="21"></line>
+                  <line x1="4" x2="9" y1="4" y2="9"></line>
+                </svg>
+              </div>
+              <h3 class="font-serif text-xl font-medium mb-2">Flexibility</h3>
+              <p class="text-muted-foreground text-sm leading-relaxed">Identify transportation options suited to different cargo types, shipment volumes, vehicle requirements, and specific routes.</p>
+            </div>
+            <!-- Responsive Coordination -->
+            <div class="group">
+              <div class="mb-6 w-12 h-12 rounded-xl bg-secondary flex items-center justify-center group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-headset w-5 h-5">
+                  <path d="M3 11h3a2 2 0 0 1 2 2v3a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-5Zm0 0a9 9 0 1 1 18 0m0 0v5a2 2 0 0 1-2 2h-1a2 2 0 0 1-2-2v-3a2 2 0 0 1 2-2h3Z"></path>
+                  <path d="M21 16v2a4 4 0 0 1-4 4h-5"></path>
+                </svg>
+              </div>
+              <h3 class="font-serif text-xl font-medium mb-2">Responsive Coordination</h3>
+              <p class="text-muted-foreground text-sm leading-relaxed">Receive dedicated support in identifying transport solutions and responding swiftly to changing shipment requirements.</p>
+            </div>
+            <!-- Clear Communication -->
+            <div class="group">
+              <div class="mb-6 w-12 h-12 rounded-xl bg-secondary flex items-center justify-center group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square w-5 h-5">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                </svg>
+              </div>
+              <h3 class="font-serif text-xl font-medium mb-2">Clear Communication</h3>
+              <p class="text-muted-foreground text-sm leading-relaxed">We maintain better coordination and transparency between cargo owners, transport operators, and all relevant parties.</p>
+            </div>
+            <!-- Regional Connectivity -->
+            <div class="group">
+              <div class="mb-6 w-12 h-12 rounded-xl bg-secondary flex items-center justify-center group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe-2 w-5 h-5">
+                  <path d="M22 12a10 10 0 1 1-20 0 10 10 0 0 1 20 0z"></path>
+                  <path d="M12 2a14.5 14.5 0 0 0 0 20 14.5 14.5 0 0 0 0-20"></path>
+                  <path d="M2 12h20"></path>
+                </svg>
+              </div>
+              <h3 class="font-serif text-xl font-medium mb-2">Regional Connectivity</h3>
+              <p class="text-muted-foreground text-sm leading-relaxed">Access potential transport solutions for local and cross-border movements through our extensive, vetting-backed regional network.</p>
+            </div>
+            <!-- Professional Partnerships -->
+            <div class="group">
+              <div class="mb-6 w-12 h-12 rounded-xl bg-secondary flex items-center justify-center group-hover:bg-accent group-hover:text-accent-foreground transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake w-5 h-5">
+                  <path d="m11 17 2 2a1 1 0 0 0 3-3"></path>
+                  <path d="m14 14 2.5 2.5a1 1 0 0 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 0 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"></path>
+                  <path d="m21 3 1 11h-2"></path>
+                  <path d="M3 3 2 14l6.5 6.5a1 1 0 0 0 3-3"></path>
+                  <path d="M3 4h8"></path>
+                </svg>
+              </div>
+              <h3 class="font-serif text-xl font-medium mb-2">Professional Partnerships</h3>
+              <p class="text-muted-foreground text-sm leading-relaxed">Work with a business that values reliability, transparency, road safety, compliance, and long-term commercial relationships.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Section -->
+      <section id="services" class="py-24 lg:py-32 border-t border-border bg-secondary/20">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+          <div class="max-w-2xl mb-16">
+            <div class="text-xs tracking-[0.2em] uppercase text-accent font-medium mb-4">Our Services</div>
+            <h2 class="font-serif text-4xl md:text-5xl font-medium tracking-tight leading-tight">
+              Transport solutions built around your cargo.
+            </h2>
+            <p class="mt-6 text-muted-foreground leading-relaxed">
+              Cargo Flow Africa Transport Group provides transport brokerage and logistics coordination services designed to connect your specific cargo requirements with suitable transportation capacity.
+            </p>
+          </div>
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-px bg-border rounded-2xl overflow-hidden">
+            <!-- Service 1 -->
+            <div class="bg-background p-8 hover:bg-secondary/50 transition-colors group cursor-pointer">
+              <div class="flex items-start justify-between mb-6">
+                <span class="text-xs text-muted-foreground tracking-wider font-mono">01</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search w-6 h-6 text-accent">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.3-4.3"></path>
+                </svg>
+              </div>
+              <h3 class="font-serif text-xl font-medium mb-2">Transport Brokerage & Truck Sourcing</h3>
+              <p class="text-sm text-muted-foreground">Identifying available transport operators and suitable vehicles based on cargo type, volume, route, and operational requirements.</p>
+            </div>
+            <!-- Service 2 -->
+            <div class="bg-background p-8 hover:bg-secondary/50 transition-colors group cursor-pointer">
+              <div class="flex items-start justify-between mb-6">
+                <span class="text-xs text-muted-foreground tracking-wider font-mono">02</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-boxes w-6 h-6 text-accent">
+                  <path d="M2.97 12.92A2 2 0 0 0 2 14.63v3.24a2 2 0 0 0 .97 1.71l3 1.8a2 2 0 0 0 2.06 0L12 19v-5.5l-5-3-4.03 2.42Z"></path>
+                  <path d="m7 16.5-4.74-2.85"></path>
+                  <path d="m7 16.5 5-3"></path>
+                  <path d="M7 16.5v5.17"></path>
+                  <path d="M12 13.5V8L7 5l-4.03 2.42A2 2 0 0 0 2 9.13v3.24a2 2 0 0 0 .97 1.71l3 1.8 5-3Z"></path>
+                  <path d="m7 10.5-4.74-2.85"></path>
+                  <path d="m7 10.5 5-3"></path>
+                  <path d="M7 10.5v5.17"></path>
+                  <path d="M21.03 12.92A2 2 0 0 1 22 14.63v3.24a2 2 0 0 1-.97 1.71l-3 1.8a2 2 0 0 1-2.06 0L12 19v-5.5l5-3 4.03 2.42Z"></path>
+                  <path d="m17 16.5 4.74-2.85"></path>
+                  <path d="m17 16.5-5-3"></path>
+                  <path d="M17 16.5v5.17"></path>
+                </svg>
+              </div>
+              <h3 class="font-serif text-xl font-medium mb-2">Commodity & Bulk Cargo Coordination</h3>
+              <p class="text-sm text-muted-foreground">Supporting the transportation of minerals, agricultural commodities, industrial materials, and other bulk commercial cargo.</p>
+            </div>
+            <!-- Service 3 -->
+            <div class="bg-background p-8 hover:bg-secondary/50 transition-colors group cursor-pointer">
+              <div class="flex items-start justify-between mb-6">
+                <span class="text-xs text-muted-foreground tracking-wider font-mono">03</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map w-6 h-6 text-accent">
+                  <polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"></polygon>
+                  <line x1="9" x2="9" y1="3" y2="18"></line>
+                  <line x1="15" x2="15" y1="6" y2="21"></line>
+                </svg>
+              </div>
+              <h3 class="font-serif text-xl font-medium mb-2">Local & Cross-Border Transport</h3>
+              <p class="text-sm text-muted-foreground">Connecting shippers with transport operators capable of servicing local and regional routes, subject to applicable requirements.</p>
+            </div>
+            <!-- Service 4 -->
+            <div class="bg-background p-8 hover:bg-secondary/50 transition-colors group cursor-pointer">
+              <div class="flex items-start justify-between mb-6">
+                <span class="text-xs text-muted-foreground tracking-wider font-mono">04</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-settings w-6 h-6 text-accent">
+                  <path d="M12.22 2h-.44a2 2 0 0 0-2 2v.18a2 2 0 0 1-1 1.73l-.43.25a2 2 0 0 1-2 0l-.15-.08a2 2 0 0 0-2.73.73l-.22.38a2 2 0 0 0 .73 2.73l.15.1a2 2 0 0 1 1 1.72v.51a2 2 0 0 1-1 1.74l-.15.09a2 2 0 0 0-.73 2.73l.22.38a2 2 0 0 0 2.73.73l.15-.08a2 2 0 0 1 2 0l.43.25a2 2 0 0 1 1 1.73V20a2 2 0 0 0 2 2h.44a2 2 0 0 0 2-2v-.18a2 2 0 0 1 1-1.73l.43-.25a2 2 0 0 1 2 0l.15.08a2 2 0 0 0 2.73-.73l.22-.39a2 2 0 0 0-.73-2.73l-.15-.08a2 2 0 0 1-1-1.74v-.5a2 2 0 0 1 1-1.74l.15-.09a2 2 0 0 0 .73-2.73l-.22-.38a2 2 0 0 0-2.73-.73l-.15.08a2 2 0 0 1-2 0l-.43-.25a2 2 0 0 1-1-1.73V4a2 2 0 0 0-2-2z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </div>
+              <h3 class="font-serif text-xl font-medium mb-2">Load & Capacity Matching</h3>
+              <p class="text-sm text-muted-foreground">Matching transportation requirements with available vehicle types, carrying capacities, routes, and loading schedules.</p>
+            </div>
+            <!-- Service 5 -->
+            <div class="bg-background p-8 hover:bg-secondary/50 transition-colors group cursor-pointer">
+              <div class="flex items-start justify-between mb-6">
+                <span class="text-xs text-muted-foreground tracking-wider font-mono">05</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-radio w-6 h-6 text-accent">
+                  <path d="M4.9 19.1C3.1 17.3 2 14.8 2 12s1.1-5.3 2.9-7.1"></path>
+                  <path d="M8.3 15.7c-1-1-1.6-2.4-1.6-3.7s.6-2.7 1.6-3.7"></path>
+                  <circle cx="12" cy="12" r="2"></circle>
+                  <path d="M15.7 15.7c1-1 1.6-2.4 1.6-3.7s-.6-2.7-1.6-3.7"></path>
+                  <path d="M19.1 19.1c1.8-1.8 2.9-4.3 2.9-7.1s-1.1-5.3-2.9-7.1"></path>
+                </svg>
+              </div>
+              <h3 class="font-serif text-xl font-medium mb-2">Shipment Communication & Coordination</h3>
+              <p class="text-sm text-muted-foreground">Facilitating clear communication between shippers and transporters throughout the agreed transportation process.</p>
+            </div>
+            <!-- Service 6 -->
+            <div class="bg-background p-8 hover:bg-secondary/50 transition-colors group cursor-pointer">
+              <div class="flex items-start justify-between mb-6">
+                <span class="text-xs text-muted-foreground tracking-wider font-mono">06</span>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-signature w-6 h-6 text-accent">
+                  <path d="M20 19.5v.5a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h5.5"></path>
+                  <path d="m8 11.5 5 5L22 4"></path>
+                  <path d="M8 17h.01"></path>
+                </svg>
+              </div>
+              <h3 class="font-serif text-xl font-medium mb-2">Transport Documentation Support</h3>
+              <p class="text-sm text-muted-foreground">Assisting with the coordination of relevant transport information, delivery documentation, and administrative requirements.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Industries Section -->
+      <section id="industries" class="py-24 lg:py-32 border-t border-border">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+          <div class="max-w-2xl mb-16">
+            <div class="text-xs tracking-[0.2em] uppercase text-accent font-medium mb-4">Cargo & Industries We Support</div>
+            <h2 class="font-serif text-4xl md:text-5xl font-medium tracking-tight leading-tight">
+              Moving the commodities that drive business.
+            </h2>
+            <p class="mt-6 text-muted-foreground leading-relaxed">
+              Cargo Flow Africa Transport Group supports businesses operating across a broad range of commodity and commercial sectors.
+            </p>
+          </div>
+          
+          <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Industry 1 -->
+            <div class="border border-border rounded-2xl p-8 hover:border-accent/50 transition-colors">
+              <div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gem w-6 h-6 text-foreground">
+                  <polygon points="6 3 18 3 22 9 12 22 2 9"></polygon>
+                  <polygon points="12 22 12 9 6 3"></polygon>
+                  <polygon points="12 22 12 9 18 3"></polygon>
+                  <line x1="2" x2="22" y1="9" y2="9"></line>
+                </svg>
+              </div>
+              <h3 class="font-serif text-xl font-medium mb-3">Mining & Minerals</h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">Coordination of minerals, coal, metals, mining commodities, and related bulk materials safely and compliantly.</p>
+            </div>
+            <!-- Industry 2 -->
+            <div class="border border-border rounded-2xl p-8 hover:border-accent/50 transition-colors">
+              <div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-sprout w-6 h-6 text-foreground">
+                  <path d="M7 20h10"></path>
+                  <path d="M10 20c5.5-2.5.8-6.4 3-10"></path>
+                  <path d="M9.5 9.4c1.1.8 1.8 2.2 2.3 3.7-2 .4-3.5.4-4.8-.3-1.2-.6-2.3-1.9-3-4.2 2.8-.5 4.4 0 5.5.8z"></path>
+                  <path d="M14.1 6a7 7 0 0 0-1.1 4c1.9-.1 3.3-.6 4.3-1.4 1-1 1.6-2.3 1.7-4.6-2.7.1-4 1-4.9 2z"></path>
+                </svg>
+              </div>
+              <h3 class="font-serif text-xl font-medium mb-3">Agriculture</h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">Transportation for agricultural products, grains, cereals, fertilisers, and essential agricultural inputs.</p>
+            </div>
+            <!-- Industry 3 -->
+            <div class="border border-border rounded-2xl p-8 hover:border-accent/50 transition-colors">
+              <div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-hard-hat w-6 h-6 text-foreground">
+                  <path d="M2 18a1 1 0 0 0 1 1h18a1 1 0 0 0 1-1v-2a1 1 0 0 0-1-1H3a1 1 0 0 0-1 1v2z"></path>
+                  <path d="M10 10V5a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1v5"></path>
+                  <path d="M4 15v-3a6 6 0 0 1 6-6h0"></path>
+                  <path d="M14 6h0a6 6 0 0 1 6 6v3"></path>
+                </svg>
+              </div>
+              <h3 class="font-serif text-xl font-medium mb-3">Construction & Infrastructure</h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">Moving cement, building materials, construction supplies, and related structural products to site.</p>
+            </div>
+            <!-- Industry 4 -->
+            <div class="border border-border rounded-2xl p-8 hover:border-accent/50 transition-colors">
+              <div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-factory w-6 h-6 text-foreground">
+                  <path d="M2 20a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8l-7 5V8l-7 5V4a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2Z"></path>
+                  <path d="M17 18h1"></path>
+                  <path d="M12 18h1"></path>
+                  <path d="M7 18h1"></path>
+                </svg>
+              </div>
+              <h3 class="font-serif text-xl font-medium mb-3">Manufacturing & Industry</h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">Handling industrial raw materials, manufactured products, and commercial supplies for factories and plants.</p>
+            </div>
+            <!-- Industry 5 -->
+            <div class="border border-border rounded-2xl p-8 hover:border-accent/50 transition-colors">
+              <div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-package w-6 h-6 text-foreground">
+                  <path d="m7.5 4.27 9 5.15"></path>
+                  <path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l2-1.14"></path>
+                  <path d="m3.3 7 8.7 5 8.7-5"></path>
+                  <path d="M12 22V12"></path>
+                </svg>
+              </div>
+              <h3 class="font-serif text-xl font-medium mb-3">Trade & Distribution</h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">General commercial cargo, containerised goods, and distribution-related shipments across regional borders.</p>
+            </div>
+            <!-- Industry 6 -->
+            <div class="border border-border rounded-2xl p-8 hover:border-accent/50 transition-colors">
+              <div class="w-12 h-12 rounded-full bg-secondary flex items-center justify-center mb-6">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-train-front w-6 h-6 text-foreground">
+                  <path d="M8 3.1V7a4 4 0 0 0 8 0V3.1"></path>
+                  <path d="m9 15-1-1"></path>
+                  <path d="m15 15 1-1"></path>
+                  <path d="M9 19c-2.8 0-5-2.2-5-5v-4a8 8 0 0 1 16 0v4c0 2.8-2.2 5-5 5Z"></path>
+                  <path d="m8 19-2 3"></path>
+                  <path d="m16 19 2 3"></path>
+                </svg>
+              </div>
+              <h3 class="font-serif text-xl font-medium mb-3">Project & Specialised Cargo</h3>
+              <p class="text-sm text-muted-foreground leading-relaxed">Cargo requiring particular vehicle configurations, unique handling arrangements, or specific transportation requirements.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Our Process Section -->
+      <section id="process" class="py-24 lg:py-32 bg-primary text-primary-foreground relative overflow-hidden">
+        <div class="absolute inset-0 grain opacity-50"></div>
+        <div class="relative max-w-7xl mx-auto px-6 lg:px-10">
+          <div class="grid lg:grid-cols-12 gap-16 items-start">
+            <!-- Process Intro -->
+            <div class="lg:col-span-4 lg:sticky lg:top-32">
+              <div class="text-xs tracking-[0.2em] uppercase text-accent font-medium mb-4">From Requirement to Delivery</div>
+              <h2 class="font-serif text-4xl md:text-5xl font-medium tracking-tight leading-tight mb-6">
+                A straightforward process designed to keep your business moving.
+              </h2>
+              <p class="text-primary-foreground/70 leading-relaxed">
+                We coordinate the connection between cargo owners and transport operators through five key stages, ensuring transparency and accountability.
+              </p>
+            </div>
+            <!-- Steps -->
+            <div class="lg:col-span-8 space-y-px">
+              <!-- Step 1 -->
+              <div class="group flex gap-8 py-8 border-b border-primary-foreground/10 last:border-0">
+                <div class="text-xs text-primary-foreground/40 font-mono pt-2 tracking-wider">01</div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-4 mb-3">
+                    <div class="w-11 h-11 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center group-hover:bg-accent group-hover:border-accent transition-all">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-text w-5 h-5 text-accent group-hover:text-accent-foreground transition-colors">
+                        <path d="M15 2h-5a2 2 0 0 0-2 2v1h4a1 1 0 0 1 0 2h-2a2 2 0 0 0-2 2v2.5a1 1 0 0 0 1 1h3a1 1 0 0 1 0 2h-2a2 2 0 0 0-2 2v3a2 2 0 0 0 2 2h5a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2h-1V4a1 1 0 0 0-1-1z"></path>
+                      </svg>
+                    </div>
+                    <h3 class="font-serif text-2xl md:text-3xl font-medium">Understand Your Requirement</h3>
+                  </div>
+                  <p class="text-primary-foreground/70 leading-relaxed pl-[60px]">
+                    You provide the essential shipment details, including cargo type, quantity, loading point, destination, preferred vehicle, required dates, and any special conditions.
+                  </p>
+                </div>
+              </div>
+              <!-- Step 2 -->
+              <div class="group flex gap-8 py-8 border-b border-primary-foreground/10 last:border-0">
+                <div class="text-xs text-primary-foreground/40 font-mono pt-2 tracking-wider">02</div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-4 mb-3">
+                    <div class="w-11 h-11 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center group-hover:bg-accent group-hover:border-accent transition-all">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-search w-5 h-5 text-accent group-hover:text-accent-foreground transition-colors">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.3-4.3"></path>
+                      </svg>
+                    </div>
+                    <h3 class="font-serif text-2xl md:text-3xl font-medium">Source Suitable Transport Capacity</h3>
+                  </div>
+                  <p class="text-primary-foreground/70 leading-relaxed pl-[60px]">
+                    We identify potential transport operators from our network based on vehicle availability, carrying capacity, route suitability, and operational requirements.
+                  </p>
+                </div>
+              </div>
+              <!-- Step 3 -->
+              <div class="group flex gap-8 py-8 border-b border-primary-foreground/10 last:border-0">
+                <div class="text-xs text-primary-foreground/40 font-mono pt-2 tracking-wider">03</div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-4 mb-3">
+                    <div class="w-11 h-11 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center group-hover:bg-accent group-hover:border-accent transition-all">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-handshake w-5 h-5 text-accent group-hover:text-accent-foreground transition-colors">
+                        <path d="m11 17 2 2a1 1 0 0 0 3-3"></path>
+                        <path d="m14 14 2.5 2.5a1 1 0 0 0 3-3l-3.88-3.88a3 3 0 0 0-4.24 0l-.88.88a1 1 0 0 1-3-3l2.81-2.81a5.79 5.79 0 0 1 7.06-.87l.47.28a2 2 0 0 0 1.42.25L21 4"></path>
+                        <path d="m21 3 1 11h-2"></path>
+                        <path d="M3 3 2 14l6.5 6.5a1 1 0 0 0 3-3"></path>
+                        <path d="M3 4h8"></path>
+                      </svg>
+                    </div>
+                    <h3 class="font-serif text-2xl md:text-3xl font-medium">Match & Confirm</h3>
+                  </div>
+                  <p class="text-primary-foreground/70 leading-relaxed pl-[60px]">
+                    We facilitate communication between relevant parties to confirm vehicle suitability, availability, transportation rates, scheduling, and commercial terms.
+                  </p>
+                </div>
+              </div>
+              <!-- Step 4 -->
+              <div class="group flex gap-8 py-8 border-b border-primary-foreground/10 last:border-0">
+                <div class="text-xs text-primary-foreground/40 font-mono pt-2 tracking-wider">04</div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-4 mb-3">
+                    <div class="w-11 h-11 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center group-hover:bg-accent group-hover:border-accent transition-all">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-truck w-5 h-5 text-accent group-hover:text-accent-foreground transition-colors">
+                        <path d="M14 18V6a2 2 0 0 0-2-2H4a2 2 0 0 0-2 2v11a1 1 0 0 0 1 1h2"></path>
+                        <path d="M15 18H9"></path>
+                        <path d="M19 18h2a1 1 0 0 0 1-1v-3.65a1 1 0 0 0-.22-.624l-3.48-4.35A1 1 0 0 0 17.52 8H14"></path>
+                        <circle cx="17" cy="18" r="2"></circle>
+                        <circle cx="7" cy="18" r="2"></circle>
+                      </svg>
+                    </div>
+                    <h3 class="font-serif text-2xl md:text-3xl font-medium">Coordinate the Movement</h3>
+                  </div>
+                  <p class="text-primary-foreground/70 leading-relaxed pl-[60px]">
+                    Once arrangements are confirmed, the transporter undertakes the shipment while Cargo Flow Africa supports communication and coordination throughout the movement.
+                  </p>
+                </div>
+              </div>
+              <!-- Step 5 -->
+              <div class="group flex gap-8 py-8 border-b border-primary-foreground/10 last:border-0">
+                <div class="text-xs text-primary-foreground/40 font-mono pt-2 tracking-wider">05</div>
+                <div class="flex-1">
+                  <div class="flex items-center gap-4 mb-3">
+                    <div class="w-11 h-11 rounded-full bg-accent/10 border border-accent/30 flex items-center justify-center group-hover:bg-accent group-hover:border-accent transition-all">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-check-circle w-5 h-5 text-accent group-hover:text-accent-foreground transition-colors">
+                        <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                        <polyline points="22 4 12 14.01 9 11.01"></polyline>
+                      </svg>
+                    </div>
+                    <h3 class="font-serif text-2xl md:text-3xl font-medium">Delivery & Completion</h3>
+                  </div>
+                  <p class="text-primary-foreground/70 leading-relaxed pl-[60px]">
+                    Cargo is delivered to the agreed destination, with relevant delivery information and documentation handled according to arrangements.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Network Section -->
+      <section class="py-24 lg:py-32 border-t border-border">
+        <div class="max-w-7xl mx-auto px-6 lg:px-10">
+          <div class="text-center max-w-3xl mx-auto mb-16">
+            <div class="text-xs tracking-[0.2em] uppercase text-accent font-medium mb-4">Our Network</div>
+            <h2 class="font-serif text-4xl md:text-5xl font-medium tracking-tight leading-tight">
+              Connecting transport capacity across Africa.
+            </h2>
+            <p class="mt-6 text-lg text-muted-foreground leading-relaxed">
+              A broader network creates greater possibilities. We maintain relationships with fleet owners, independent transporters, regional operators, and specialist transportation businesses across the continent.
+            </p>
+          </div>
+          
+          <div class="bg-secondary/30 rounded-3xl p-8 lg:p-12">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h3 class="font-serif text-2xl font-medium mb-6">Our Regional Connectivity</h3>
+                <p class="text-muted-foreground mb-8">We proudly facilitate routes spanning these core African nations:</p>
+                
+                <div class="grid grid-cols-2 sm:grid-cols-3 gap-y-4 gap-x-2">
+                  <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span> <span class="font-medium text-sm">Botswana</span></div>
+                  <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span> <span class="font-medium text-sm">South Africa</span></div>
+                  <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span> <span class="font-medium text-sm">Zimbabwe</span></div>
+                  <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span> <span class="font-medium text-sm">Zambia</span></div>
+                  <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span> <span class="font-medium text-sm">Namibia</span></div>
+                  <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span> <span class="font-medium text-sm">Mozambique</span></div>
+                  <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span> <span class="font-medium text-sm">Eswatini</span></div>
+                  <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span> <span class="font-medium text-sm">Lesotho</span></div>
+                  <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span> <span class="font-medium text-sm">Malawi</span></div>
+                  <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span> <span class="font-medium text-sm">Tanzania</span></div>
+                  <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span> <span class="font-medium text-sm">DR Congo</span></div>
+                  <div class="flex items-center gap-2"><span class="w-1.5 h-1.5 rounded-full bg-accent"></span> <span class="font-medium text-sm">Angola</span></div>
+                </div>
+              </div>
+              
+              <div class="bg-background rounded-2xl p-8 border border-border shadow-sm">
+                <h3 class="font-serif text-xl font-medium mb-6">Our Vetting Standards</h3>
+                <ul class="space-y-4">
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check w-5 h-5 text-accent shrink-0 mt-0.5"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                    <span class="text-sm text-muted-foreground">Suitable vehicle capacity and route capability verification.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check w-5 h-5 text-accent shrink-0 mt-0.5"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                    <span class="text-sm text-muted-foreground">Appropriate operating licences and documentation checks.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check w-5 h-5 text-accent shrink-0 mt-0.5"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                    <span class="text-sm text-muted-foreground">Relevant insurance and strict regulatory compliance.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check w-5 h-5 text-accent shrink-0 mt-0.5"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                    <span class="text-sm text-muted-foreground">Professional conduct and dependable communication standards.</span>
+                  </li>
+                  <li class="flex items-start gap-3">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check w-5 h-5 text-accent shrink-0 mt-0.5"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1z"></path><path d="m9 12 2 2 4-4"></path></svg>
+                    <span class="text-sm text-muted-foreground">Absolute commitment to cargo and road safety across all routes.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Client CTA / Contact Section -->
+      <section id="contact" class="py-24 lg:py-32 border-t border-border bg-card">
+        <div class="max-w-5xl mx-auto px-6 lg:px-10">
+          <div class="text-center mb-16">
+            <h2 class="font-serif text-4xl md:text-5xl font-medium tracking-tight leading-[1.05] text-balance mb-6">
+              Let's keep your cargo <span class="italic text-accent">moving.</span>
+            </h2>
+            <p class="text-lg text-muted-foreground max-w-2xl mx-auto">
+              Our mission is to simplify cargo transportation through efficient sourcing, reliable coordination, transparent communication, and strong commercial partnerships.
+            </p>
+          </div>
+          
+          <div class="grid md:grid-cols-2 gap-8">
+            <div class="bg-background rounded-2xl p-8 border border-border flex flex-col justify-center">
+              <h3 class="font-serif text-2xl font-medium mb-6">Get In Touch</h3>
+              
+              <div class="space-y-6">
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user w-5 h-5 text-foreground"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                  </div>
+                  <div>
+                    <div class="text-sm text-muted-foreground mb-1">Contact Person</div>
+                    <div class="font-medium text-foreground">Fred Otlogetswe</div>
+                  </div>
+                </div>
+                
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-5 h-5 text-foreground"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                  </div>
+                  <div>
+                    <div class="text-sm text-muted-foreground mb-1">Telephone & WhatsApp</div>
+                    <a href="tel:+2673110098" class="font-medium text-foreground hover:text-accent transition-colors block">+267 311 0098</a>
+                    <a href="https://wa.me/26773732442" class="font-medium text-foreground hover:text-accent transition-colors block mt-1">WhatsApp: +267 73 732 442</a>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail w-5 h-5 text-foreground"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                  </div>
+                  <div>
+                    <div class="text-sm text-muted-foreground mb-1">Email Address</div>
+                            <a href="mailto:info@cargoflowafrica.co.za" class="font-medium text-foreground hover:text-accent transition-colors">info@cargoflowafrica.co.za</a>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-4">
+                  <div class="w-10 h-10 rounded-full bg-secondary flex items-center justify-center shrink-0">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin w-5 h-5 text-foreground"><path d="M20 10c0 4.993-5.539 10.193-7.399 11.799a1 1 0 0 1-1.202 0C9.539 20.193 4 14.993 4 10a8 8 0 0 1 16 0"></path><circle cx="12" cy="10" r="3"></circle></svg>
+                  </div>
+                  <div>
+                    <div class="text-sm text-muted-foreground mb-1">Physical Office</div>
+                    <address class="font-medium text-foreground not-italic leading-relaxed">
+                      Office Suite Eh Nol, Eland House,<br />
+                      Gaborone West Industrial,<br />
+                      Botswana
+                    </address>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <div class="bg-primary text-primary-foreground rounded-2xl p-8 lg:p-12 relative overflow-hidden flex flex-col justify-center">
+              <div class="absolute inset-0 grain opacity-40"></div>
+              <div class="relative z-10">
+                <h3 class="font-serif text-3xl font-medium mb-4">Request a Consultation</h3>
+                <p class="text-primary-foreground/80 mb-8 leading-relaxed">
+                  Provide us with your cargo requirements and transport operational needs. Our team will identify the optimal capacity and solutions for your business.
+                </p>
+                <a href="mailto:info@cargoflowafrica.co.za?subject=Transport%20Coordination%20Enquiry" class="btn btn-secondary btn-lg group w-full sm:w-auto inline-flex items-center justify-center">
+                  Send an Enquiry
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right w-4 h-4 ml-1 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-transform">
+                    <path d="M7 7h10v10"></path>
+                    <path d="M7 17 17 7"></path>
+                  </svg>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="border-t border-border py-12 bg-secondary/5">
+      <div class="max-w-7xl mx-auto px-6 lg:px-10">
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-12 pb-8 border-b border-border/50">
+          <!-- Brand + Contact -->
+          <div class="space-y-6">
+            <picture>
+              <source media="(max-width: 768px)" srcset="./logo-mobile.avif" type="image/avif">
+              <img src="./logo-desktop.avif" alt="Cargo Flow Africa" class="h-10 object-contain" />
+            </picture>
+            <p class="text-sm text-muted-foreground">Connecting cargo across 12 African nations in the SADC region.</p>
+            <div class="space-y-3 text-sm">
+              <div class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-user w-4 h-4 text-accent mt-0.5 shrink-0"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"></path><circle cx="12" cy="7" r="4"></circle></svg>
+                <div>
+                  <div class="text-xs text-muted-foreground uppercase tracking-wider">Contact Person</div>
+                  <div class="font-medium text-foreground">Fred Otlogetswe</div>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-phone w-4 h-4 text-accent mt-0.5 shrink-0"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"></path></svg>
+                <div>
+                  <div class="text-xs text-muted-foreground uppercase tracking-wider">Telephone & WhatsApp</div>
+                  <a href="tel:+2673110098" class="font-medium text-foreground hover:text-accent transition-colors block">+267 311 0098</a>
+                  <a href="https://wa.me/26773732442" class="font-medium text-foreground hover:text-accent transition-colors block mt-1">WhatsApp: +267 73 732 442</a>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-mail w-4 h-4 text-accent mt-0.5 shrink-0"><rect width="20" height="16" x="2" y="4" rx="2"></rect><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"></path></svg>
+                <div>
+                  <div class="text-xs text-muted-foreground uppercase tracking-wider">Email Address</div>
+                  <a href="mailto:info@cargoflowafrica.co.za" class="font-medium text-foreground hover:text-accent transition-colors">info@cargoflowafrica.co.za</a>
+                </div>
+              </div>
+              <div class="flex items-start gap-3">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-globe w-4 h-4 text-accent mt-0.5 shrink-0"><circle cx="12" cy="12" r="10"></circle><line x1="2" x2="22" y1="12" y2="12"></line><path d="M12 2a15.5 15.5 0 0 1 4 10 15.5 15.5 0 0 1-4 10 15.5 15.5 0 0 1-4-10 15.5 15.5 0 0 1 4-10z"></path></svg>
+                <div>
+                  <div class="text-xs text-muted-foreground uppercase tracking-wider">Website</div>
+                  <a href="https://www.cargoflowafrica.co.za" class="font-medium text-foreground hover:text-accent transition-colors">www.cargoflowafrica.co.za</a>
+                </div>
+              </div>
+            </div>
+            <a href="./profile.pdf" download class="inline-flex items-center gap-2 text-sm font-medium text-accent hover:text-accent/80 transition-colors">
+              Download Company Profile (PDF)
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-down w-4 h-4"><path d="M14 2H4a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2v-8l-8-8z"></path><path d="M14 2v8h8"></path><path d="M12 19v-8a2 2 0 0 0-2-2h-2a2 2 0 0 0-2 2v8"></path><path d="M10 17l2 2 2-2"></path></svg>
+            </a>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="space-y-6">
+            <h4 class="font-serif text-lg font-semibold text-foreground">Quick Links</h4>
+            <nav class="flex flex-col gap-3">
+              <a href="#about" class="text-sm text-muted-foreground hover:text-foreground transition-colors">About Us</a>
+              <a href="#services" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Our Services</a>
+              <a href="#industries" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Industries</a>
+              <a href="#process" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Our Process</a>
+              <a href="#contact" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Contact Us</a>
+            </nav>
+          </div>
+
+          <!-- Services -->
+          <div class="space-y-6">
+            <h4 class="font-serif text-lg font-semibold text-foreground">Services</h4>
+            <nav class="flex flex-col gap-3">
+              <a href="#services" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Transport Brokerage</a>
+              <a href="#services" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Bulk Cargo Coordination</a>
+              <a href="#services" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Cross-Border Transport</a>
+              <a href="#services" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Load & Capacity Matching</a>
+              <a href="#contact" class="text-sm text-muted-foreground hover:text-foreground transition-colors">Get a Quote</a>
+            </nav>
+          </div>
+        </div>
+
+        <!-- Copyright -->
+        <div class="flex flex-col md:flex-row items-center justify-between gap-4 pt-8 text-sm text-muted-foreground">
+          <p>© 2026 Cargo Flow Africa Transport Group</p>
+          <p>Connecting Businesses to Opportunity</p>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script>
+    // Mobile menu toggle
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileNav = document.getElementById('mobile-nav');
+    menuBtn.addEventListener('click', () => {
+      mobileNav.classList.toggle('hidden');
+      const expanded = !mobileNav.classList.contains('hidden');
+      menuBtn.setAttribute('aria-expanded', expanded);
+    });
+
+    // Close mobile menu when clicking nav links
+    document.querySelectorAll('.nav-link, .nav-link-mobile').forEach(link => {
+      link.addEventListener('click', () => {
+        mobileNav.classList.add('hidden');
+        menuBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
+  </script>
+</body>
+</html>
